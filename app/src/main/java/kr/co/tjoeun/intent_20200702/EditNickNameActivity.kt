@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import kotlinx.android.synthetic.main.activity_edit_nick_name.*
 
 class EditNickNameActivity : AppCompatActivity() {
@@ -16,16 +17,18 @@ class EditNickNameActivity : AppCompatActivity() {
 
             val inputNick = nickNameEdt.text.toString()
 
+            Log.d("D>>>>", "입력 닉네임 : " + inputNick)
 //            finish()  데이터 리턴
             val resultIntent = Intent()
 //            변수에 리턴 값 입력
             resultIntent.putExtra("nickName", inputNick)
 //            "입력완료" 버튼으로 처리함을 명시 + 결과용 Intent 첨부
-            setResult(Activity.RESULT_OK)
+            setResult(Activity.RESULT_OK, resultIntent)
 
 //            처리 완료 시 종료
             finish()
 
         }
     }
+
 }

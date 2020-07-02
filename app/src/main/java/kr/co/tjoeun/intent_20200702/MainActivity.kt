@@ -1,8 +1,10 @@
 package kr.co.tjoeun.intent_20200702
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -46,6 +48,27 @@ class MainActivity : AppCompatActivity() {
 //            startActivityForResult 사용 시, 어떤 결과를 가지러 가는지에 대한 값을 기술(고유 번호 입력)
             startActivityForResult(myIntent, 1000)
 
+        }
+    }
+
+//    결과를 가지고 돌아올 때 실행되는 함수. onActivityResult 입력 후 자동완성 선택하면 자동으로 override 입력됨
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+    
+//        입력받아온 값 조회
+        if(requestCode == 1000)
+        {
+//            "입력완료"버튼으로 완료된 건지 확인. (뒤로가기로 창을 닫은 경우에는 반영하지 않아야 함)
+            if(resultCode == Activity.RESULT_OK)
+            {
+                Log.d("D>>", "받아온 닉네임 : " + data?.getStringExtra("nickName"))
+
+                val newNickName = data?.getStringExtra("nickName")
+
+                Log.d("D>>", "받아온 닉네임 2 : " + newNickName)
+
+                nickNameTxt.text = newNickName
+            }
         }
     }
 }
