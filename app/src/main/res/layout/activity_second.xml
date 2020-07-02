@@ -13,8 +13,16 @@
         android:id="@+id/receivedMessageTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="입력한 메시지 표시"
+        android:text="입력한 String 입력값"
         android:textColor="#FFFFFF"
         android:textSize="25sp" />
+
+   <TextView
+       android:id="@+id/receivedMessageTxt2"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="입력한 Number 입력값 : 00"
+       android:textColor="#FFFFFF"
+       android:textSize="25sp" />
 
 </LinearLayout>

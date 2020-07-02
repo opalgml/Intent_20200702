@@ -27,9 +27,11 @@ class MainActivity : AppCompatActivity() {
 
             val myIntent = Intent(this, SecondActivity::class.java)
             val inputMessage = messageEdt.text.toString()
+            val inputMessage2 = numberEdt.text.toString().toInt()
 
 //            값 전달 -> putExtra()
             myIntent.putExtra("message", inputMessage)
+            myIntent.putExtra("message2", inputMessage2)
 
             startActivity(myIntent)
 
