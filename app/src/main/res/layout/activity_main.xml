@@ -12,7 +12,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="<메인화면>"
+        android:text="메인화면"
         android:textSize="20sp" />
 
     <Button
@@ -20,5 +20,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="첫번째 화면으로 이동하기" />
+
+    <EditText
+        android:id="@+id/messageEdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="전달할 내용 입력"
+        android:singleLine="true" />
+
+    <Button
+        android:id="@+id/sendToSecondBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="두번째 화면으로 입력값 전달하기" />
 
 </LinearLayout>

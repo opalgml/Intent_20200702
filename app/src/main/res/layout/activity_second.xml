@@ -6,20 +6,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="15dp"
-    tools:context=".FirstActivity">
+    tools:context=".SecondActivity"
+    android:background="#000000">
 
-
-   <TextView
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="첫번째 추가 화면"
-       android:textSize="17sp" />
-
-    <Button
-        android:id="@+id/backToMainBtn"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/receivedMessageTxt"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="메인으로 돌아가기" />
+        android:text="입력한 메시지 표시"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp" />
 
 </LinearLayout>
