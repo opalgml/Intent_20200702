@@ -36,5 +36,16 @@ class MainActivity : AppCompatActivity() {
             startActivity(myIntent)
 
         }
+
+//        닉네임 변경기능
+        changeNickNameBtn.setOnClickListener {
+
+            val myIntent = Intent(this, EditNickNameActivity::class.java)
+
+//            창을 띄워서 값을 받아오기 위함 -> startActivity X , startActivityForResult
+//            startActivityForResult 사용 시, 어떤 결과를 가지러 가는지에 대한 값을 기술(고유 번호 입력)
+            startActivityForResult(myIntent, 1000)
+
+        }
     }
 }
