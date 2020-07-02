@@ -9,6 +9,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    //    닉네임 변경 요청 고유값을 멤버변수로 생성.
+    val REQ_FOR_NICKNAME = 1000
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -46,7 +49,7 @@ class MainActivity : AppCompatActivity() {
 
 //            창을 띄워서 값을 받아오기 위함 -> startActivity X , startActivityForResult
 //            startActivityForResult 사용 시, 어떤 결과를 가지러 가는지에 대한 값을 기술(고유 번호 입력)
-            startActivityForResult(myIntent, 1000)
+            startActivityForResult(myIntent, REQ_FOR_NICKNAME)
 
         }
     }
@@ -56,7 +59,7 @@ class MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
     
 //        입력받아온 값 조회
-        if(requestCode == 1000)
+        if(requestCode == REQ_FOR_NICKNAME)
         {
 //            "입력완료"버튼으로 완료된 건지 확인. (뒤로가기로 창을 닫은 경우에는 반영하지 않아야 함)
             if(resultCode == Activity.RESULT_OK)
